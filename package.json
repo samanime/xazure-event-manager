@@ -15,6 +15,7 @@
   "scripts": {
     "start": "npm run clean & nodemon --exec \"npm run build\"",
     "prepare": "npm run clean & npm run build",
+    "postpublish": "git push & git push --tags",
     "build": "npm run build:main & npm run build:module",
     "build:main": "babel src -d dist/main -s",
     "build:module": "cross-env NODE_ENV=module babel src -d dist/module -s",
