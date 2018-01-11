@@ -1,0 +1,28 @@
+{
+  "name": "xazure-event-manager",
+  "version": "0.1.0",
+  "description": "An async-first event manager. Used by xazure-cms.",
+  "main": "dist/index.js",
+  "author": "Christian Snodgrass <christian.snodgrass.open@gmail.com> (http://xazure.net)",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run clean & nodemon --exec \"npm run build\"",
+    "build": "npm run build:main & npm run build:module",
+    "build:main": "babel src -d dist/main -s",
+    "build:module": "cross-env NODE_ENV=module babel src -d dist/module -s",
+    "clean": "rimraf -rf dist || exit 0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.3",
+    "rimraf": "^2.6.2"
+  }
+}
