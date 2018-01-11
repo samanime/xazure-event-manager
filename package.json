@@ -1,6 +1,6 @@
 {
   "name": "xazure-event-manager",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "An async-first event manager. Used by xazure-cms.",
   "main": "dist/main",
   "module": "dist/module",
