@@ -1,4 +1,4 @@
-export const EventManager = () => {
+export default () => {
   const events = {};
 
   /**
@@ -29,9 +29,11 @@ export const EventManager = () => {
         return;
       }
 
-      priority = (callback.priority !== undefined && callback.priority) || (priority !== undefined && priority) || 100;
-      events[event] = events[event] || {};
-      events[event][priority] = (events[event][priority] || []).concat(callback);
+      priority = callback.priority !== undefined ? callback.priority :
+        (priority !== undefined ? priority : 100);
+
+      events[eventName] = events[eventName] || {};
+      events[eventName][priority] = (events[eventName][priority] || []).concat(callback);
     },
 
     /**
@@ -81,7 +83,7 @@ export const EventManager = () => {
       return Object.keys(events[eventName] || [])
         .sort()
         .reduce((result, priority) =>
-            events[event][priority].reduce((r, callback) =>
+            events[eventName][priority].reduce((r, callback) =>
                 Promise.resolve(callback(r) || {}),
               result
             ),
@@ -90,5 +92,3 @@ export const EventManager = () => {
     }
   };
 };
-
-export default new EventManager();
