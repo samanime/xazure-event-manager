@@ -1,12 +1,13 @@
 {
   "name": "xazure-event-manager",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An async-first event manager. Used by xazure-cms.",
   "main": "dist/index.js",
   "author": "Christian Snodgrass <christian.snodgrass.open@gmail.com> (http://xazure.net)",
   "license": "MIT",
   "scripts": {
     "start": "npm run clean & nodemon --exec \"npm run build\"",
+    "prepare": "npm run clean & npm run build",
     "build": "npm run build:main & npm run build:module",
     "build:main": "babel src -d dist/main -s",
     "build:module": "cross-env NODE_ENV=module babel src -d dist/module -s",
