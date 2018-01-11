@@ -2,12 +2,14 @@
   "name": "xazure-event-manager",
   "version": "0.1.2",
   "description": "An async-first event manager. Used by xazure-cms.",
-  "main": "dist/index.js",
+  "main": "dist/main",
+  "module": "dist/module",
+  "jsnext:main": "dist/module",
   "author": "Christian Snodgrass <christian.snodgrass.open@gmail.com> (http://xazure.net)",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/samanime/xazure-event-manager.git"
+    "type": "git",
+    "url": "https://github.com/samanime/xazure-event-manager.git"
   },
   "bugs": {
     "url": "https://github.com/samanime/xazure-event-manager/issues"
